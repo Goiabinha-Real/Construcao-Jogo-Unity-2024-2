@@ -3573,7 +3573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2107159420}
   player: {fileID: 988174706}
-  Jogador: {fileID: 0}
+  Jogador: {fileID: 988174700}
 --- !u!64 &1269366403
 MeshCollider:
   m_ObjectHideFlags: 0

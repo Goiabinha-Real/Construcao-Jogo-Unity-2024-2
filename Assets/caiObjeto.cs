@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class caiObjeto : MonoBehaviour
 {
-    public GameObject objeto;
+    public Transform finalPos, platformPos;
+    public Rigidbody objeto;
     void Start()
     {
     }
@@ -15,7 +17,14 @@ public class caiObjeto : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player")){
-            objeto.GetComponent<Rigidbody>().useGravity = true;
+            StartCoroutine(Wait3());
         }
     }
+    IEnumerator Wait3()
+    { 
+    objeto.useGravity = true;
+    yield return new WaitForSeconds(3);
+    objeto.useGravity = false;
+    }
+
 }
